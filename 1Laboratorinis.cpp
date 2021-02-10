@@ -36,7 +36,7 @@ int main (){
 char star ='*';
 char gap = ' ';
 string name;
-cout<<"Enter your name:"<<endl;
+cout<<"Iveskite savo varda:"<<endl;
 getline(cin, name);
 int linelength=name.length()+14;
 string border1= line(linelength, star);
