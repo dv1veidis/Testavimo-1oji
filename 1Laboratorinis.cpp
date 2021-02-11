@@ -36,6 +36,19 @@ string greeting (string name, char lytis){
     return pasisveikinimas;
 }
 
+void pasisveikinimas (string name, char lytis, char gap, int n, char star, int plotis){
+
+cout<<line(n, star)<<endl;;
+for (int i=0; i<plotis; i++){
+    cout<<space(n, gap)<<endl;
+}
+cout<<greeting(name, lytis)<<endl;
+for(int i=0; i<plotis; i++){
+    cout<<space(n, gap)<<endl;
+}
+cout<<line(n, star)<<endl;
+}
+
 
 int main (){
 char star ='*';
@@ -43,38 +56,25 @@ char gap = ' ';
 int linelength;
 string name;
 char lytis;
+int plotis;
 cout<<"Enter your name:"<<endl;
 getline(cin, name);
 cout<<"Iveskite savo lyti: (V/M)"<<endl;
 cin>>lytis;
+cout<<"Iveskite norima remelio ploti:"<<endl;
+cin>>plotis;
 if(lytis=='V'||lytis=='v'){
-linelength=name.length()+14;
-string border1= line(linelength, star);
-string border2= border1;
-string tarpas1= space(linelength, gap);
-string tarpas2=tarpas1;
-string pasisveikinimas=greeting(name, lytis);
 
-cout<<border1<<endl;
-cout<<tarpas1<<endl;;
-cout<<pasisveikinimas<<endl;
-cout<<tarpas2<<endl;
-cout<<border2<<endl;
+ linelength=name.length()+14;
+
+pasisveikinimas(name, lytis, gap, linelength, star, plotis);
 }
 else if(lytis=='M' || lytis=='m'){
-linelength=name.length()+13;
-string border1= line(linelength, star);
-string border2= border1;
-string tarpas1= space(linelength, gap);
-string tarpas2=tarpas1;
-string pasisveikinimas=greeting(name, lytis);
+     linelength=name.length()+13;
 
-cout<<border1<<endl;
-cout<<tarpas1<<endl;;
-cout<<pasisveikinimas<<endl;
-cout<<tarpas2<<endl;
-cout<<border2<<endl;   
+pasisveikinimas(name, lytis, gap, linelength, star, plotis);
 }
+
 else{
     cout<<"Neteisingai ivesta lytis!"<<endl;
 }
